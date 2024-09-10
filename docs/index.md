@@ -104,9 +104,9 @@ extra:
   consent:
     title: Consentimiento de cookies
     description: >-
-      Esta página de apuntes utiliza cookies para reconocer las visitas, medir la efectividad de la documentación
-      y averiguar si encuentras aquello que buscas o cómo has llegado a estos apuntes.
-      Con tu consentimiento, me ayudas a mejorar estos materiales.
+      Este sitio web utiliza cookies para ofrecerte una mejor experiencia. 
+      Al hacer clic en "Aceptar", aceptas el uso de cookies. 
+      También puedes configurar tus preferencias de cookies si lo prefieres.
 
 # Plugins adicionales
 plugins:
