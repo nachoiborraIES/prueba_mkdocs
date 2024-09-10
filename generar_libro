@@ -1,0 +1,1 @@
+pandoc --toc --toc-depth=2 docs/index.md docs/01.md docs/02.md -o salida.odt --reference-doc=plantilla.odt --filter ./filtro.py
