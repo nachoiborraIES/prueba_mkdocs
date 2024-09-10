@@ -48,4 +48,99 @@ Veremos a continuación algunos parámetros relevantes que podemos incluir en el
     * `logo`: permite establecer el logo que aparecerá en la barra de navegación superior
     * `features`: características adicionales a incluir en el tema. Algunos ejemplos son `header.autohide` (para ocultar la barra de navegación superior cuando hacemos scroll por la página), `navigation.top` (para mostrar un botón para volver al inicio cuando hacemos scroll hacia abajo), o `toc.follow` (para mostrar en la barra de navegación el título de la página actual cuando hacemos scroll hacia abajo).
 
+Aquí vemos un ejemplo de fichero de configuración, el que se usa para esta misma web:
+
+```yaml
+site_name: Página de prueba con Material for MkDocs
+site_url: https://nahoiborraies.github.io/prueba_mkdocs
+use_directory_urls: false
+
+# Menú de navegación (izquierda)
+nav:
+  - Introducción: index.md
+  - Características importantes: 
+    - Opciones con el código fuente: 01.md
+    - Subir documentación a GH Pages: 02.md
+
+# Tema CSS
+theme:
+  language: es
+  name: "material"
+  palette:
+    # Aquí se configuran los temas claro y oscuro, respectivamente
+    - scheme: default
+      primary: "blue"
+      accent: "yellow"
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Cambiar a modo noche
+    - scheme: slate 
+      primary: "blue"
+      accent: "yellow"
+      toggle:
+        icon: material/toggle-switch
+        name: Cambiar a modo día
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: "images/logo.png"
+  features:
+    - header.autohide
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - navigation.indexes
+    - content.code.annotate
+    - announce.dismiss
+    - toc.follow
+    - content.code.copy
+
+# CSS adicional
+extra_css:
+  - css/extra.css
+
+# Opciones adicionales de configuración
+extra:
+  consent:
+    title: Consentimiento de cookies
+    description: >-
+      Esta página de apuntes utiliza cookies para reconocer las visitas, medir la efectividad de la documentación
+      y averiguar si encuentras aquello que buscas o cómo has llegado a estos apuntes.
+      Con tu consentimiento, me ayudas a mejorar estos materiales.
+
+# Plugins adicionales
+plugins:
+  - search
+
+# Extensiones de Markdown habilitadas
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - meta
+  - pymdownx.details  
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  # Uso correcto de listas (no embebidas en otros elementos)
+  - sane_lists
+  - toc:
+      permalink: true
+      toc_depth: 4
+```
+
 Para más información, visitar [mkdocs.org](https://www.mkdocs.org) :smile:
