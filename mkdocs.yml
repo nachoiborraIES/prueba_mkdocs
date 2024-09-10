@@ -1,0 +1,133 @@
+# Configuración general del sitio MkDocs
+# Aspectos a cambiar para cada sitio web:
+# - site_name
+# - site_url
+# - nav con sus opciones
+# - theme > palette con los colores que queramos
+# - El resto de cosas son opcionales (estilos CSS, idioma, etc)
+
+# Cambiar nombre del sitio
+site_name: Página de prueba con Material for MkDocs
+# Cambiar URL principal del sitio
+site_url: https://nahoiborraies.github.io/prueba_mkdocs
+# Este parámetro afecta a cómo se generan las URL
+# Así se generan URL como archivos HTML
+use_directory_urls: false
+
+# Menú de navegación (izquierda)
+nav:
+  - Introducción: index.md
+  - Características importantes: 
+    - Opciones con el código fuente: 01.md
+    - Subir documentación a GH Pages: 02.md
+
+# Tema CSS
+theme:
+  language: es
+  name: "material"
+  palette:
+    # Aquí se configuran los temas claro y oscuro, respectivamente
+    - scheme: default
+      primary: "blue"
+      accent: "yellow"
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Cambiar a modo noche
+    - scheme: slate 
+      primary: "blue"
+      accent: "yellow"
+      toggle:
+        icon: material/toggle-switch
+        name: Cambiar a modo día
+  # Tipo de letra de texto y código
+  font:
+    text: Roboto
+    code: Roboto Mono
+  # Logo de la barra de navegación superior (en subcarpeta "docs")
+  logo: "images/logo.png"
+  # Características adicionales
+  features:
+    # Auto-ocultar barra de navegación al hacer scroll
+    - header.autohide
+    # Mostrar botón para volver arriba cuando estemos haciendo scroll
+    - navigation.top
+    # Actualizar URL superior y enlace activo en menú izquierdo
+    - navigation.tracking
+    # Incluir pie de página
+    - navigation.footer
+    # Para permitir submenús enlazados con páginas
+    - navigation.indexes
+    # Permite añadir anotaciones en el código para, por ejemplo, resaltar líneas, o numerarlas
+    - content.code.annotate
+    # Añade un botón para marcar anuncios como "leídos"
+    - announce.dismiss
+    # Marca la página actual como activa en el menú de navegación
+    - toc.follow
+    # Permite copiar el contenido de los bloques de código
+    - content.code.copy
+
+# CSS adicional (modificar el fichero en cuestión para editar los estilos)
+extra_css:
+  - css/extra.css
+
+# Opciones adicionales de configuración
+extra:
+  # Consentimiento de cookies
+  consent:
+    title: Consentimiento de cookies
+    description: >-
+      Esta página de apuntes utiliza cookies para reconocer las visitas, medir la efectividad de la documentación
+      y averiguar si encuentras aquello que buscas o cómo has llegado a estos apuntes.
+      Con tu consentimiento, me ayudas a mejorar estos materiales.
+
+# Plugins adicionales
+plugins:
+  - search
+
+# Extensiones de Markdown habilitadas
+markdown_extensions:
+  # Añadir avisos o advertencias en el contenido
+  - admonition
+  # Añadir atributos CSS en elementos Markdown
+  - attr_list
+  # Permite escribir Markdown dentro de código HTML
+  - md_in_html
+  # Permite añadir metadatos a un grupo de páginas (por ejemplo, para plantillas comunes)
+  - meta
+  # Permite desplegar o colapsar los mensajes de advertencia
+  - pymdownx.details  
+  # Permite crear listas de tareas (con checked/no checked) en formato Markdown
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Realce de sintaxis para bloques de código "inline" (en línea con el texto)
+  - pymdownx.inlinehilite
+  # Permite agrupar contenido en pestañas (tabs)
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Permite añadir emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # Permite incrustar gráficos y diagramas creados con Mermaid
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Permiten resaltar texto y definir subrayados y tachados
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Permite renderizar teclas
+  - pymdownx.keys
+  - pymdownx.snippets:
+      # Auto-incluir las páginas citadas en todos los documentos
+      auto_append:
+        # - includes/ra.md
+  # Uso correcto de listas (no embebidas en otros elementos)
+  - sane_lists
+  - toc:
+      # Permite acceder a partes de un documento por sus subtítulos
+      permalink: true
+      # Nivel de profundidad máximo en el índice
+      toc_depth: 4
