@@ -376,7 +376,17 @@
 
 
 <h1 id="subir-documentacion-a-github-pages">Subir documentación a GitHub Pages<a class="headerlink" href="#subir-documentacion-a-github-pages" title="Permanent link">&para;</a></h1>
-<p>Por definir</p>
+<p>Es habitual que hagamos un repositorio en GitHub con los archivos de nuestro proyecto y que queramos incluir en él la propia documentación generada con <em>MkDocs</em>. Para ello, los pasos a seguir son estos:</p>
+<ul>
+<li>Creamos (si no tenemos ya) un fichero <code>.gitignore</code> en el repositorio que excluya la carpeta <code>/site</code> al subir cambios al servidor. Esta carpeta es la que se genera automáticamente cuando ejecutamos el comando <code>mkdocs build</code> para generar la documentación</li>
+<li>Cualquier cambio relativo a los archivos del proyecto (código fuente, ficheros de texto, etc) se sincroniza con el repositorio de la forma habitual (<em>commit</em>, <em>push</em>). También los ficheros <em>Markdown</em> que hagamos con la propia documentación, en la subcarpeta <em>docs</em>.</li>
+<li>Para generar y subir la documentación al sitio web ejecutamos el comando <code>mkdocs gh-deploy</code>. Esto genera la carpeta <code>site</code> con la documentación en HTML y la sube o actualiza a una rama aparte llamada <code>gh-pages</code>.</li>
+</ul>
+<p>Así que, resumiendo, para subir cambios al proyecto deberemos hacerlo a través de dos vías:</p>
+<ul>
+<li>Cambios en los ficheros del proyecto (incluyendo ficheros <em>Markdown</em>): con los típicos comandos <em>commit</em> y <em>push</em>.</li>
+<li>Cambios en la documentación: con <code>mkdocs gh-deploy</code>.</li>
+</ul>
 
 
 
