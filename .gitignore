@@ -1,7 +1,7 @@
 # Archivos adicionales incluidos para generar un ODT con los apuntes
 archivo.txt
 filtro.py
-generar_libro.bat
+generar_libro
 plantilla.odt
 salida.odt
 
