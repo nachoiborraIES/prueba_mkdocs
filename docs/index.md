@@ -7,7 +7,7 @@
 Para poder utilizar *MkDocs* es necesario tener instalado Python previamente. Además, necesitamos instalar las siguientes librerías usando el comando `pip`, bien en la distribución general del sistema, o en un entorno virtual propio (*venv*):
 
 * El propio framework *mkdocs*, que podemos instalar a través de `pip` con el comando `pip install mkdocs`
-* Si queremos utilizar algún tema de diseño externo a MkDocs, como por ejemplo el que usaremos aquí (*material*), lo debemos instalar también. El comando en este caso es `pip install mkdocs material`
+* Si queremos utilizar algún tema de diseño externo a MkDocs, como por ejemplo el que usaremos aquí (*material*), lo debemos instalar también. El comando en este caso es `pip install mkdocs-material`
 
 ## Comandos útiles
 
