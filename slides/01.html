@@ -1,0 +1,414 @@
+{% extends "templates/base.html" %}
+
+{% block title %}
+    Primeros pasos con Python
+{% endblock %}
+
+{% block content %}
+
+    <section data-markdown>
+    <script type="text/template">
+    ## Primeros pasos con Python
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Características básicas
+    
+    - Lenguaje de programación de principios de los 90
+    - Muy utilizado para aprender a programar (fácil de aprender)
+    - Multiplataforma
+    - Interpretado (no compilado)
+    - Tipado dinámico de datos
+    - Multiparadigma (estructurado, modular, orientado a objetos, funcional...)
+    - Ampliable con multitud de paquetes/librerías descargables
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Instalar Python (Windows y Mac)
+    
+    - Descargar desde [web oficial](https://www.python.org/downloads)
+    - [Vídeo explicativo](https://1drv.ms/v/s!Ag8MDYmv3RRnx1Csw9qHst28qeuL?e=Pkd7Df)
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Instalar Python (Windows)
+    
+    Marcar la casilla para añadir el intérprete al PATH
+    
+    <div align="center">
+        <img src="../../../img/01_asistente.png" width="50%">
+    </div>
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Instalar Python (Linux)
+    
+    - Muchas distribuciones vienen con una versión preinstalada
+    - Para instalar otra distinta (junto con la original)
+    
+    ```
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install python3.9
+    sudo apt install python3-pip python3.9-dev python3.9-venv
+    ```
+    
+    </script>
+    </section> 
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Prueba de la instalación
+    
+    - Abrir un terminal y escribir **python** o **python3** (según sistema operativo) con el parámetro **--version** o bien **-V**
+        - Existe un comando *py* en algunos sistemas que enlaza con la versión más reciente de Python instalada
+    - Mostrará la versión actualmente instalada de Python
+    
+    ```
+    python --version
+    python -V
+    ```
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Elegir un IDE
+    
+    - **Geany** (sencillo, para ejercicios simples)
+    - **Visual Studio Code** (también para proyectos complejos)
+    - Otros:
+        - Editores online para programas simples ([ejemplo](https://www.programiz.com/python-programming/online-compiler/))
+        - IDLE (integrado en la instalación de Python)
+        - PyCharm (para proyectos complejos de varios archivos)
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Geany
+    
+    - Descargar desde [web oficial](https://geany.org/)
+        - En el caso de Linux, instalar paquete *geany* desde terminal
+    - Utiliza compiladores/intérpretes previamente instalados en el sistema
+    - Abrir un nuevo archivo, guardarlo con extensión apropiada (*.py*), editarlo y pulsar *Ejecutar*
+    - [Vídeo explicativo](https://1drv.ms/v/s!Ag8MDYmv3RRnx1ERxyMtvG6iZUpJ?e=nKi3WS)
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## VS Code
+    
+    - Gratuito y *open source*
+    - Multiplataforma
+    - Fácil de usar y potente para desarrollos complejos
+    - Sin configuraciones adicionales para ejecutar programas
+    - Terminal integrado para interactuar con los programas
+    - Muy personalizable con las extensiones
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## VS Code
+    
+    - Descargar versión desde [web oficial](https://code.visualstudio.com/)
+    - Instalar extensión [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) de *Microsoft*
+    - Crear carpeta con el proyecto y editar código fuente
+    - Ejecutar con menú *Run* > *Run Without Debugging*
+        - También clic derecho en código y *Run Python > Run Python File in Terminal*
+    - [Vídeo explicativo](https://1drv.ms/v/s!Ag8MDYmv3RRnx1cVaQl_56BTuKo6?e=lIvAKl)
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## VS Code: tabulaciones
+    
+    - En Python son esenciales
+    - Se puede configurar su longitud, convertir tabulaciones en espacios, etc desde la sección *Spaces* o *Tab Size* en la parte inferior derecha
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## VS Code: tema
+    
+    - Desde *File > Preferences > Theme*
+        - *Code > Preferences > Theme* en Mac
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## VS Code: delimitador de columna
+    
+    - Desde *File > Preferences > Settings*
+    - Buscamos *rulers* en el buscador superior y editamos la opción *Editor: Rulers*
+    
+    ```
+    "editor.rulers": [
+            80,
+        ]
+    ```
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## PyCharm
+    
+    - Descargar versión Community desde [web oficial](https://www.jetbrains.com/pycharm/download)
+    - Por defecto los proyectos (carpetas) se guardan en subcarpeta *PyCharmProjects* en carpeta de usuario
+    - Hay que elegir el intérprete Python del proyecto
+        - Entorno virtual (*venv*) propio (proyecto con librerías preinstaladas)
+    - Añadir nuevos archivos con clic derecho sobre proyecto (*New* - *Python file*)
+    - Ejecutar archivo con click derecho (*Run*)
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## PyCharm
+    
+    Asistente de instalación
+    
+    <div align="center">
+        <img src="../../../img/01_pycharm01.png" width="40%">
+    </div>
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## PyCharm
+    
+    Crear nuevo proyecto
+    
+    <div align="center">
+        <img src="../../../img/01_pycharm02.png" width="50%">
+    </div>
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## PyCharm
+    
+    Crear fichero
+    
+    <div align="center">
+        <img src="../../../img/01_pycharm03.png" width="50%">
+    </div>
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## PyCharm
+    
+    Ejecutar programa
+    
+    <div align="center">
+        <img src="../../../img/01_pycharm04.png" width="50%">
+    </div>
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Primer programa
+    
+    Edita el siguiente código con el editor que prefieras y ejecútalo
+    
+    ```python
+    print("Hola")
+    ```
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Otras herramientas
+    
+    Existen herramientas adicionales que pueden resultar útiles en
+    
+    - Etapas iniciales de aprendizaje de Python
+    - Trabajo colaborativo
+    - Entornos de *data science* o *machine learning*
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab
+    
+    - Permite editar documentos online que integran texto y código embebido
+        - En Python, R, Julia...
+    - Incorporar ciertas librerías habituales para *data science* como *NumPy* o *Matplotlib* en Python
+    - [Web oficial](https://colab.research.google.com/)
+    - Se integra con nuestra cuenta de Google Drive
+    - Funciona a base de *cuadernos* en formato *ipynb*
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab: gestionar cuadernos
+    
+    Menú *Archivo*
+    
+    <div align="center">
+        <img src="../../../img/14_colab01.png" width="40%">
+    </div>
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab: editar cuadernos
+    
+    - Insertamos bloques de código o texto desde el menú *Insertar*
+    - Guardamos cambios también desde menú *Archivo*
+        - Recomendable guardar copias de cuadernos externos en nuestra cuenta (*Guardar una copia en Drive*) 
+    - Ejecutamos bloques de código con el botón de *Play* o con *Control* + *Intro*
+        - El código se ejecuta en una máquina virtual remota gestionada por Google Colab
+        - Podemos ejecutar comandos en el sistema remoto anteponiendo `!`: `!python -V`
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab: editar cuadernos
+    
+    <div align="center">
+        <img src="../../../img/14_colab02.png" width="60%">
+    </div>
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab: crear cuadernos
+    
+    También podemos crearlos desde la pantalla inicial de Drive
+    
+    <div align="center">
+        <img src="../../../img/14_drive_colab_nuevo.png" width="30%">
+    </div>
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab: librerías integradas
+    
+    Podemos utilizar directamente ciertas librerías populares
+    
+    <div align="center">
+        <img src="../../../img/14_colab03.png" width="60%">
+    </div>
+    
+    </script>
+    </section>
+    
+    <section data-markdown>
+    <script type="text/template">
+    ## Google Colab: barra izquierda de opciones
+    
+    <div align="center">
+        <img src="../../../img/14_colab04.png" width="60%">
+    </div>
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Limitaciones de Google Colab
+    
+    En su versión gratuita:
+    
+    - Uso limitado a 1 GPU (útil para redes neuronales, por ejemplo)
+    - Hasta 12 horas de uso continuado por sesión
+    - RAM limitada
+    
+    [Vídeo explicativo](https://1drv.ms/v/s!Ag8MDYmv3RRnx1kL_x5_D4gahzxk?e=xPDten)
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Jupyter
+    
+    - Herramientas con funcionalidad similar a Colab
+        - *Jupyter Notebook*: editor de cuadernos similar a Colab
+        - *JupyterLab*: integra Notebook con otras librerías adicionales para *data science* o *machine learning*
+    - Se instala localmente (se pierde en parte el trabajo colaborativo)
+    - Debemos gestionar localmente las librerías necesarias
+    - [Web oficial](https://jupyter.org/)
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Anaconda
+    
+    - Pack de varias herramientas:
+        - Python y R
+        - Jupyter (Lab y Notebook)
+        - PyCharm
+        - ...
+    - Incorpora también ciertas librerías populares
+    - No interfiere con otro software instalado en el sistema
+    - [Web oficial](https://www.anaconda.com)
+    
+    </script>
+    </section>
+        
+    <section data-markdown>
+    <script type="text/template">
+    ## Anaconda
+    
+    <div align="center">
+        <img src="../../../img/14_anaconda01.png" width="50%">
+    </div>
+    
+    </script>
+    </section>
+
+{% endblock %}
